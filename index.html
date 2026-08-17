@@ -214,6 +214,7 @@ const ICONS = {
   award:            '<circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>',
   target:           '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
   'edit-3':         '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>',
+  'arrows-up-down':  '<path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/>',
 };
 function icon(name,cls='w-5 h-5'){
   const def=ICONS[name]; if(!def) return '';
@@ -238,25 +239,124 @@ const workoutProgram = {
   ],
   resistance_sections:[
     {id:"Strength A",category_title:"Resistance",workout_name:"Full Body (Hinge + Squat)",meta:{total_blocks:3,avg_time:"35-45 Mins"},
-     warm_up:[{id:"wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},{id:"wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/watch?v=-CiWQ2IvY34"},{id:"wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/watch?v=1LvxZrJFy9Y"},{id:"wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}],
+     warm_up:[{id:"wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},{id:"wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/shorts/QvJVFbKKkic"},{id:"wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/shorts/1LvxZrJFy9Y"},{id:"wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}],
      blocks:[
-       {block_name:"Block 1",exercises:[{id:"sa1",name:"A1. Romanian Deadlift (DB/KB)",reps:"8-10",video:"https://www.youtube.com/watch?v=IJdUtnxAmNo"},{id:"sa2",name:"A2. Heel-Elevated Goblet Squat",reps:"10-12",video:"https://www.youtube.com/watch?v=XJJQu6Uc7kU"}]},
-       {block_name:"Block 2",exercises:[{id:"sa3",name:"B1. Single-Arm Row",reps:"8-10/side",video:"https://www.youtube.com/watch?v=ZRSGpBUVcNw"},{id:"sa4",name:"B2. Half-Kneeling Overhead Press",reps:"8/side",video:"https://www.youtube.com/watch?v=UmJWdBrFzWk"}]},
-       {block_name:"Block 3",exercises:[{id:"sa5",name:"C1. Banded Hip Thrust",reps:"12-15",video:"https://www.youtube.com/shorts/pSwLdoIwPik",noWeightInput:true},{id:"sa6",name:"C2. Pallof Press",reps:"10-12/side",video:"https://www.youtube.com/watch?v=RQJ-9NgZXYs"}]}
+       {block_name:"Block 1",exercises:[
+         {id:"sa1",name:"A1. Barbell Romanian Deadlift",reps:"8-10",video:"https://www.youtube.com/shorts/KhjNjzrm93c",swaps:[
+           {name:"DB Romanian Deadlift",reps:"8-10",video:"https://www.youtube.com/shorts/vnEANU7BqqY"},
+           {name:"Cable Pull-Through",reps:"12-15",video:"https://www.youtube.com/shorts/T5XLh0rXbxQ"},
+           {name:"KB Deadlift",reps:"10-12",video:"https://www.youtube.com/shorts/1Qi0NQW89Oc"}
+         ]},
+         {id:"sa2",name:"A2. Heel-Elevated Goblet Squat",reps:"10-12",video:"https://www.youtube.com/shorts/XJJQu6Uc7kU",swaps:[
+           {name:"Barbell Back Squat",reps:"8-10",video:"https://www.youtube.com/shorts/tNUq6b5t11Q"},
+           {name:"DB Sumo Squat",reps:"12-15",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},
+           {name:"Leg Press",reps:"12-15",video:"https://www.youtube.com/shorts/rLaLocnFeRM"}
+         ]}
+       ]},
+       {block_name:"Block 2",exercises:[
+         {id:"sa3",name:"B1. Lat Pulldown",reps:"10-12",video:"https://www.youtube.com/shorts/bNmvKpJSWKM",swaps:[
+           {name:"Straight-Arm Pulldown",reps:"12-15",video:"https://www.youtube.com/shorts/jULa7guhCdM"},
+           {name:"Single-Arm Lat Pulldown",reps:"10-12/side",video:"https://www.youtube.com/shorts/diBoTD4-uG8"},
+           {name:"Assisted Pull-Up",reps:"6-10",video:"https://www.youtube.com/shorts/5YC67yVpBGE"}
+         ]},
+         {id:"sa4",name:"B2. Seated Dumbbell Overhead Press",reps:"8-10",video:"https://www.youtube.com/shorts/qEwKCR5JCog",swaps:[
+           {name:"Barbell Overhead Press",reps:"6-8",video:"https://www.youtube.com/shorts/W6o1A0bEnmU"},
+           {name:"Arnold Press",reps:"8-10",video:"https://www.youtube.com/shorts/6Z15_WdXmVw"},
+           {name:"Half-Kneeling Cable Press",reps:"10-12/side",video:"https://www.youtube.com/shorts/UmJWdBrFzWk"}
+         ]}
+       ]},
+       {block_name:"Block 3",exercises:[
+         {id:"sa5",name:"C1. Barbell Hip Thrust",reps:"10-12",video:"https://www.youtube.com/shorts/W86oVlnLqY4",swaps:[
+           {name:"DB Hip Thrust",reps:"12-15",video:"https://www.youtube.com/shorts/Q2PMzlxGRFU"},
+           {name:"Smith Machine Hip Thrust",reps:"10-12",video:"https://www.youtube.com/shorts/rneQGh3-72Q"},
+           {name:"B-Stance Hip Thrust",reps:"10-12/side",video:"https://www.youtube.com/shorts/INxfdh39e4w"}
+         ]},
+         {id:"sa6",name:"C2. Cable Pallof Press",reps:"10-12/side",video:"https://www.youtube.com/shorts/MChHOiaCR7s",swaps:[
+           {name:"Plank",reps:"30-45 sec",video:"https://www.youtube.com/shorts/5c-vucY3beU",noWeightInput:true},
+           {name:"Dead Bug",reps:"8-10/side",video:"https://www.youtube.com/shorts/5c-vucY3beU",noWeightInput:true},
+           {name:"Landmine Rotation",reps:"8-10/side",video:"https://www.youtube.com/shorts/RQJ-9NgZXYs"}
+         ]}
+       ]}
      ]},
-    {id:"Strength B",category_title:"Resistance",workout_name:"Unilateral + Abductors",meta:{total_blocks:3,avg_time:"30-40 Mins"},
-     warm_up:[{id:"wb_wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},{id:"wb_wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/watch?v=-CiWQ2IvY34"},{id:"wb_wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/watch?v=1LvxZrJFy9Y"},{id:"wb_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}],
+    {id:"Strength B",category_title:"Resistance",workout_name:"Unilateral + Push/Pull",meta:{total_blocks:3,avg_time:"30-40 Mins"},
+     warm_up:[{id:"wb_wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},{id:"wb_wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/shorts/QvJVFbKKkic"},{id:"wb_wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/shorts/1LvxZrJFy9Y"},{id:"wb_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}],
      blocks:[
-       {block_name:"Block 1",exercises:[{id:"sb1",name:"A1. Bulgarian Split Squat",reps:"8/side",video:"https://www.youtube.com/watch?v=rah3eJCPXHA"},{id:"sb2",name:"A2. Single-Leg RDL",reps:"8/side",video:"https://www.youtube.com/shorts/wHktyQBgejo"}]},
-       {block_name:"Block 2",exercises:[{id:"sb3",name:"B1. Dumbbell Floor Press",reps:"8-12",video:"https://www.youtube.com/watch?v=vagdk94bFn4"},{id:"sb4",name:"B2. Chest-Supported Row",reps:"10-12",video:"https://www.youtube.com/shorts/G35gTqGcXXA"}]},
-       {block_name:"Block 3",exercises:[{id:"sb5",name:"C1. Standing Band Abduction",reps:"15/side",video:"https://www.youtube.com/shorts/7Sph-K6Nmgc",noWeightInput:true},{id:"sb6",name:"C2. Dead Bug",reps:"8-10/side",video:"https://www.youtube.com/shorts/5c-vucY3beU",noWeightInput:true}]}
+       {block_name:"Block 1",exercises:[
+         {id:"sb1",name:"A1. Bulgarian Split Squat",reps:"8/side",video:"https://www.youtube.com/shorts/rah3eJCPXHA",swaps:[
+           {name:"Reverse Lunge",reps:"10/side",video:"https://www.youtube.com/shorts/6LnALQ338Ws"},
+           {name:"Step-Up",reps:"10/side",video:"https://www.youtube.com/shorts/rLaLocnFeRM"},
+           {name:"Single-Leg Press",reps:"10/side",video:"https://www.youtube.com/shorts/qCUFS9_Baqs"}
+         ]},
+         {id:"sb2",name:"A2. Single-Leg RDL",reps:"8/side",video:"https://www.youtube.com/shorts/wHktyQBgejo",swaps:[
+           {name:"DB Single-Leg RDL",reps:"8/side",video:"https://www.youtube.com/shorts/YQgs03p3UxE"},
+           {name:"Good Morning",reps:"10-12",video:"https://www.youtube.com/shorts/H3hyqgvwzHM"},
+           {name:"Hamstring Curl (Machine)",reps:"10-12",video:"https://www.youtube.com/shorts/StJrQpZxEHs"}
+         ]}
+       ]},
+       {block_name:"Block 2",exercises:[
+         {id:"sb3",name:"B1. Incline Dumbbell Press",reps:"8-12",video:"https://www.youtube.com/shorts/oS2Uy3MAbgs",swaps:[
+           {name:"Flat DB Bench Press",reps:"8-12",video:"https://www.youtube.com/shorts/ljyqdC4ydrM"},
+           {name:"Barbell Bench Press",reps:"5-8",video:"https://www.youtube.com/shorts/8fXfwG4ftaQ"},
+           {name:"Cable Chest Fly",reps:"12-15",video:"https://www.youtube.com/shorts/SDFILcdlkgM"}
+         ]},
+         {id:"sb4",name:"B2. Seated Cable Row",reps:"10-12",video:"https://www.youtube.com/shorts/BXMjaxXRUuE",swaps:[
+           {name:"Single-Arm Cable Row",reps:"10-12/side",video:"https://www.youtube.com/shorts/qD1WZ5pSuvk"},
+           {name:"Chest-Supported DB Row",reps:"10-12",video:"https://www.youtube.com/shorts/aLefE5TWuMg"},
+           {name:"Barbell Bent-Over Row",reps:"8-10",video:"https://www.youtube.com/shorts/5BK3VOe7M9Y"}
+         ]}
+       ]},
+       {block_name:"Block 3",exercises:[
+         {id:"sb5",name:"C1. Cable Hip Abduction",reps:"15/side",video:"https://www.youtube.com/shorts/GTMCfPpb0y4",noWeightInput:false,swaps:[
+           {name:"Banded Hip Abduction",reps:"20/side",video:"https://www.youtube.com/shorts/1LvxZrJFy9Y",noWeightInput:true},
+           {name:"Side-Lying Abduction",reps:"15/side",video:"https://www.youtube.com/shorts/7Sph-K6Nmgc",noWeightInput:true},
+           {name:"Machine Hip Abduction",reps:"15-20",video:"https://www.youtube.com/shorts/vzGnKI2PI78"}
+         ]},
+         {id:"sb6",name:"C2. Dead Bug",reps:"8-10/side",video:"https://www.youtube.com/shorts/5c-vucY3beU",noWeightInput:true,swaps:[
+           {name:"Bird Dog",reps:"10/side",video:"https://www.youtube.com/shorts/R1OXPHRqehw",noWeightInput:true},
+           {name:"Hollow Hold",reps:"20-30 sec",video:"https://www.youtube.com/shorts/6dfkYZm9tpE",noWeightInput:true},
+           {name:"Plank",reps:"30-45 sec",video:"https://www.youtube.com/shorts/5c-vucY3beU",noWeightInput:true}
+         ]}
+       ]}
      ]},
     {id:"Strength C",category_title:"Resistance",workout_name:"Posterior Chain + Power",meta:{total_blocks:3,avg_time:"35-45 Mins"},
-     warm_up:[{id:"wc_wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},{id:"wc_wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/watch?v=-CiWQ2IvY34"},{id:"wc_wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/watch?v=1LvxZrJFy9Y"},{id:"wc_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}],
+     warm_up:[{id:"wc_wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},{id:"wc_wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/shorts/QvJVFbKKkic"},{id:"wc_wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/shorts/1LvxZrJFy9Y"},{id:"wc_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}],
      blocks:[
-       {block_name:"Block 1",exercises:[{id:"sc1",name:"A1. KB Deadlift or Swing",reps:"10-15",video:"https://www.youtube.com/watch?v=1Qi0NQW89Oc"},{id:"sc2",name:"A2. Heel-Elevated Squat (3s Eccentric)",reps:"8-10",video:"https://www.youtube.com/shorts/aoJ6zmwV5VE"}]},
-       {block_name:"Block 2",exercises:[{id:"sc3",name:"B1. Single-Arm Row",reps:"10/side",video:"https://www.youtube.com/watch?v=ZRSGpBUVcNw"},{id:"sc4",name:"B2. Push Press / Arnold Press",reps:"8-10",video:"https://www.youtube.com/shorts/Kg8JD8l6ezw"}]},
-       {block_name:"Block 3",exercises:[{id:"sc5",name:"C1. Frog Pumps",reps:"20",video:"https://www.youtube.com/watch?v=MQ62r2V7Lw8",noWeightInput:true},{id:"sc6",name:"C2. Suitcase Carry",reps:"30-45 sec/side",video:"https://www.youtube.com/shorts/T5XLh0rXbxQ"}]}
+       {block_name:"Block 1",exercises:[
+         {id:"sc1",name:"A1. Barbell Deadlift (or KB Swing)",reps:"5-8 (or 12-15)",video:"https://www.youtube.com/shorts/ZaTM37cfiDs",swaps:[
+           {name:"KB Swing",reps:"12-15",video:"https://www.youtube.com/shorts/1Qi0NQW89Oc"},
+           {name:"Trap Bar Deadlift",reps:"5-8",video:"https://www.youtube.com/shorts/y5yEmMKdW6I"},
+           {name:"Sumo Deadlift",reps:"5-8",video:"https://www.youtube.com/shorts/vfKwjT5-86k"}
+         ]},
+         {id:"sc2",name:"A2. Barbell Back Squat (3s Eccentric)",reps:"6-8",video:"https://www.youtube.com/shorts/tNUq6b5t11Q",swaps:[
+           {name:"Goblet Squat",reps:"10-12",video:"https://www.youtube.com/shorts/XJJQu6Uc7kU"},
+           {name:"Front Squat",reps:"5-6",video:"https://www.youtube.com/shorts/PPmvh7gBTi0"},
+           {name:"Box Squat",reps:"5-6",video:"https://www.youtube.com/shorts/7eWS45uEx7Q"}
+         ]}
+       ]},
+       {block_name:"Block 2",exercises:[
+         {id:"sc3",name:"B1. Cable Face Pull",reps:"15-20",video:"https://www.youtube.com/shorts/sHSY0Ao8QHs",noWeightInput:false,swaps:[
+           {name:"Band Face Pull",reps:"15-20",video:"https://www.youtube.com/shorts/I41wK3wTZlo",noWeightInput:true},
+           {name:"DB Reverse Fly",reps:"12-15",video:"https://www.youtube.com/shorts/r4uM4JSvu8M"},
+           {name:"Cable Rear Delt Fly",reps:"12-15",video:"https://www.youtube.com/shorts/MChHOiaCR7s"}
+         ]},
+         {id:"sc4",name:"B2. Arnold Press",reps:"8-10",video:"https://www.youtube.com/shorts/6Z15_WdXmVw",swaps:[
+           {name:"DB Shoulder Press",reps:"8-10",video:"https://www.youtube.com/shorts/qEwKCR5JCog"},
+           {name:"Lateral Raise",reps:"12-15",video:"https://www.youtube.com/shorts/diBoTD4-uG8"},
+           {name:"Z-Press",reps:"8-10",video:"https://www.youtube.com/shorts/W6o1A0bEnmU"}
+         ]}
+       ]},
+       {block_name:"Block 3",exercises:[
+         {id:"sc5",name:"C1. Cable Kickback",reps:"12-15/side",video:"https://www.youtube.com/shorts/hQKQZdCAntQ",noWeightInput:false,swaps:[
+           {name:"DB Kickback",reps:"12-15/side",video:"https://www.youtube.com/shorts/KMMnggkh5I0"},
+           {name:"Donkey Kick",reps:"15/side",video:"https://www.youtube.com/shorts/GTMCfPpb0y4",noWeightInput:true},
+           {name:"Banded Kickback",reps:"15-20/side",video:"https://www.youtube.com/shorts/vzGnKI2PI78",noWeightInput:true}
+         ]},
+         {id:"sc6",name:"C2. Suitcase Carry",reps:"30-45 sec/side",video:"https://www.youtube.com/shorts/T5XLh0rXbxQ",swaps:[
+           {name:"Farmer Carry (Both)",reps:"30-45 sec",video:"https://www.youtube.com/shorts/T5XLh0rXbxQ"},
+           {name:"Overhead Carry",reps:"20-30 sec/side",video:"https://www.youtube.com/shorts/T5XLh0rXbxQ"},
+           {name:"Plate Pinch Walk",reps:"20-30 sec/side",video:"https://www.youtube.com/shorts/T5XLh0rXbxQ"}
+         ]}
+       ]}
      ]}
   ],
   cardio_sections:[
@@ -309,6 +409,8 @@ const state = {
   completedExercises:  new Set(),
   pendingWeightLogs:   {},
   openVideos:          new Set(),
+  openSwaps:           new Set(),
+  activeSwaps:         {},
   exerciseWeights:     {},
   workoutHistory:      [],
   weightLog:           {},
@@ -393,7 +495,7 @@ function openWorkout(workoutId,type) {
   if(!workout) return;
   const weights={};
   if(type==='resistance') workout.blocks.forEach(b=>b.exercises.forEach(ex=>{weights[ex.id]=getLastLog(ex.id)?.weight??0;}));
-  Object.assign(state,{activeWorkout:workout,workoutType:type,completedExercises:new Set(),pendingWeightLogs:{},openVideos:new Set(),exerciseWeights:weights,workoutStartTime:Date.now(),warmUpCollapsed:false,activeView:'detail'});
+  Object.assign(state,{activeWorkout:workout,workoutType:type,completedExercises:new Set(),pendingWeightLogs:{},openVideos:new Set(),openSwaps:new Set(),activeSwaps:{},exerciseWeights:weights,workoutStartTime:Date.now(),warmUpCollapsed:false,activeView:'detail'});
   render(); window.scrollTo(0,0);
 }
 function goHome() {
@@ -684,19 +786,23 @@ function renderHome() {
 // RENDER: EXERCISE CARD
 // ====================================================================
 function renderExerciseCard(ex,showWeightTracker){
-  const done=state.completedExercises.has(ex.id);
-  const videoOpen=state.openVideos.has(ex.id);
-  const pending=state.pendingWeightLogs[ex.id];
-  const isRecorded=!!pending, effort=pending?.effort??null;
-  const weight=state.exerciseWeights[ex.id]??0;
-  const suggested=showWeightTracker&&!ex.noWeightInput?getSuggestedWeight(ex.id):null;
-  const {embedUrl,isShort}=getEmbedInfo(ex.video);
-  const EFFORT_LABELS=['Too Easy','Easy','Good','Hard','Max'];
-  const EFFORT_ACTIVE=['bg-teal-100 text-teal-700 border-teal-400','bg-green-100 text-green-700 border-green-400','bg-yellow-100 text-yellow-700 border-yellow-400','bg-orange-100 text-orange-700 border-orange-400','bg-red-100 text-red-700 border-red-400'];
+  const activeSwap = state.activeSwaps[ex.id];
+  const displayEx  = activeSwap ? {...ex,...activeSwap} : ex;
+  const done       = state.completedExercises.has(ex.id);
+  const videoOpen  = state.openVideos.has(ex.id);
+  const swapOpen   = state.openSwaps.has(ex.id);
+  const pending    = state.pendingWeightLogs[ex.id];
+  const isRecorded = !!pending, effort=pending?.effort??null;
+  const weight     = state.exerciseWeights[ex.id]??0;
+  const suggested  = showWeightTracker&&!displayEx.noWeightInput?getSuggestedWeight(ex.id):null;
+  const {embedUrl,isShort} = getEmbedInfo(displayEx.video);
+  const EFFORT_LABELS = ['Too Easy','Easy','Good','Hard','Max'];
+  const EFFORT_ACTIVE = ['bg-teal-100 text-teal-700 border-teal-400','bg-green-100 text-green-700 border-green-400','bg-yellow-100 text-yellow-700 border-yellow-400','bg-orange-100 text-orange-700 border-orange-400','bg-red-100 text-red-700 border-red-400'];
+
   let weightTrackerHtml='';
   if(showWeightTracker){
     const suggBadge=suggested!==null?`<div class="flex items-center gap-2 pt-1"><span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#9ca3af">Suggested</span><span class="font-black text-secondary rounded-full px-2 py-0.5" style="font-size:11px;background:rgba(0,167,157,.1)">${Number.isInteger(suggested)?suggested:suggested.toFixed(1)} lbs</span></div>`:'';
-    const weightRow=!ex.noWeightInput?`${suggBadge}<div class="flex items-center gap-3">${icon('dumbbell','w-4 h-4 text-gray-400 shrink-0')}<div class="flex items-center gap-2">
+    const weightRow=!displayEx.noWeightInput?`${suggBadge}<div class="flex items-center gap-3">${icon('dumbbell','w-4 h-4 text-gray-400 shrink-0')}<div class="flex items-center gap-2">
       <button data-action="adjust-weight" data-exercise-id="${ex.id}" data-delta="-2.5" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 font-bold flex items-center justify-center active:scale-95 transition-transform text-base">−</button>
       <div class="flex items-center gap-1">
         <input type="number" id="weight-input-${ex.id}" data-action="weight-input" data-exercise-id="${ex.id}"
@@ -707,24 +813,60 @@ function renderExerciseCard(ex,showWeightTracker){
       </div>
       <button data-action="adjust-weight" data-exercise-id="${ex.id}" data-delta="2.5" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 font-bold flex items-center justify-center active:scale-95 transition-transform text-base">+</button>
       </div><span id="saved-badge-${ex.id}" class="ml-auto font-bold text-secondary flex items-center gap-1 ${isRecorded?'':'hidden'}" style="font-size:11px">${icon('check','w-3.5 h-3.5')} Saved</span></div>`:'';
-    const effortBtns=EFFORT_LABELS.map((label,i)=>{const val=i+1,sel=effort===val;return `<button data-action="select-effort" data-exercise-id="${ex.id}" data-effort="${val}" data-no-weight="${ex.noWeightInput?'1':'0'}" title="${label}" class="effort-btn flex-1 h-9 rounded-xl border-2 transition-all active:scale-95 ${sel?EFFORT_ACTIVE[i]+' scale-105':'bg-gray-50 text-gray-400 border-transparent'}" style="font-size:11px;font-weight:700">${val}</button>`;}).join('');
-    const savedNoWeight=ex.noWeightInput?`<span id="saved-badge-${ex.id}" class="font-bold text-secondary flex items-center gap-1 ${isRecorded?'':'hidden'}" style="font-size:11px">${icon('check','w-3.5 h-3.5')} Saved</span>`:'';
+    const effortBtns=EFFORT_LABELS.map((label,i)=>{const val=i+1,sel=effort===val;return `<button data-action="select-effort" data-exercise-id="${ex.id}" data-effort="${val}" data-no-weight="${displayEx.noWeightInput?'1':'0'}" title="${label}" class="effort-btn flex-1 h-9 rounded-xl border-2 transition-all active:scale-95 ${sel?EFFORT_ACTIVE[i]+' scale-105':'bg-gray-50 text-gray-400 border-transparent'}" style="font-size:11px;font-weight:700">${val}</button>`;}).join('');
+    const savedNoWeight=displayEx.noWeightInput?`<span id="saved-badge-${ex.id}" class="font-bold text-secondary flex items-center gap-1 ${isRecorded?'':'hidden'}" style="font-size:11px">${icon('check','w-3.5 h-3.5')} Saved</span>`:'';
     weightTrackerHtml=`<div class="px-4 pb-4 pt-2 border-t border-gray-50 space-y-3">${weightRow}<div class="space-y-1.5">
       <div class="flex items-center justify-between"><p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#9ca3af">How hard was it?</p>${savedNoWeight}</div>
       <div class="flex gap-1.5" id="effort-row-${ex.id}">${effortBtns}</div>
       <div class="flex justify-between px-0.5" style="font-size:9px;color:#d1d5db;font-weight:600"><span>Too Easy</span><span>Max Effort</span></div></div></div>`;
   }
-  const videoHtml=videoOpen?`<div class="w-full" style="${isShort?'aspect-ratio:9/16;max-height:380px':'aspect-ratio:16/9'}"><iframe src="${embedUrl}?autoplay=1&rel=0&modestbranding=1" class="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="${ex.name}"></iframe></div>`:'';
+
+  const videoHtml = videoOpen
+    ? `<div class="w-full" style="${isShort?'aspect-ratio:9/16;max-height:380px':'aspect-ratio:16/9'}"><iframe src="${embedUrl}?autoplay=1&rel=0&modestbranding=1" class="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="${displayEx.name}"></iframe></div>`
+    : '';
+
+  // Swap panel
+  const swapPanel = (swapOpen && ex.swaps && ex.swaps.length)
+    ? `<div class="px-4 pb-4 border-t border-gray-100">
+        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9ca3af;padding-top:12px;padding-bottom:8px">Swap Options</p>
+        <div class="flex flex-col gap-2">
+          ${ex.swaps.map((s,i)=>{
+            const isActive = activeSwap && activeSwap.name===s.name;
+            return `<button data-action="select-swap" data-exercise-id="${ex.id}" data-swap-index="${i}"
+              class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all active:scale-98"
+              style="background:${isActive?'#2D6A4F':'#f9fafb'};border:2px solid ${isActive?'#2D6A4F':'#e5e7eb'}">
+              <div style="width:28px;height:28px;border-radius:8px;background:${isActive?'rgba(255,255,255,0.2)':'#F5C300'};flex-shrink:0;display:flex;align-items:center;justify-content:center">
+                ${isActive?icon('check','w-3.5 h-3.5 text-white'):icon('dumbbell','w-3.5 h-3.5 text-gray-900')}
+              </div>
+              <div class="flex-1 min-w-0">
+                <p style="font-size:13px;font-weight:700;color:${isActive?'#ffffff':'#111827'};line-height:1.2">${s.name}</p>
+                <p style="font-size:11px;color:${isActive?'rgba(255,255,255,0.7)':'#9ca3af'}">${s.reps}</p>
+              </div>
+              ${isActive?`<button data-action="clear-swap" data-exercise-id="${ex.id}" style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.15);border:none;border-radius:6px;padding:4px 8px;cursor:pointer">Reset</button>`:''}
+            </button>`;
+          }).join('')}
+        </div>
+      </div>`
+    : '';
+
   return `
     <div class="bg-white rounded-2xl overflow-hidden shadow-soft" id="card-${ex.id}">
-      <div class="p-4 flex items-center gap-4">
-        <div class="flex-1 min-w-0"><h4 class="font-bold text-sm mb-0.5 ${done?'text-gray-300 line-through':'text-gray-900'}">${ex.name}</h4><p style="font-size:11px;color:#9ca3af;font-weight:600">${ex.reps}</p></div>
+      <div class="p-4 flex items-center gap-3">
+        <div class="flex-1 min-w-0">
+          <h4 class="font-bold text-sm mb-0.5 ${done?'text-gray-300 line-through':'text-gray-900'}">${displayEx.name}${activeSwap?`<span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2D6A4F;margin-left:6px;background:rgba(45,106,79,.1);padding:2px 6px;border-radius:4px">SWAPPED</span>`:''}
+          </h4>
+          <p style="font-size:11px;color:#9ca3af;font-weight:600">${displayEx.reps}</p>
+        </div>
+        ${ex.swaps&&ex.swaps.length?`<button data-action="toggle-swaps" data-exercise-id="${ex.id}" class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-colors" style="${swapOpen?'background:#2D6A4F;color:white':'background:#f3f4f6;color:#6b7280'}" title="Swap exercise">
+          ${icon('arrows-up-down','w-4 h-4')}
+        </button>`:''}
         <button data-action="toggle-video" data-exercise-id="${ex.id}" class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors" style="${videoOpen?'background:#111827;color:white':'background:#F5C300;color:#111827'}">
           ${videoOpen?icon('x','w-4 h-4'):icon('play','w-4 h-4 fill-current ml-0.5')}
         </button>
-      </div>${weightTrackerHtml}${videoHtml}
+      </div>${weightTrackerHtml}${videoHtml}${swapPanel}
     </div>`;
 }
+
 function renderBlockCheck(exerciseIds){
   const allDone=exerciseIds.length>0&&exerciseIds.every(id=>state.completedExercises.has(id));
   return `<button data-action="toggle-block" data-exercise-ids='${JSON.stringify(exerciseIds)}' class="w-9 h-9 rounded-full flex items-center justify-center transition-all shrink-0 ${allDone?'text-gray-900 scale-110':'border-2 border-gray-200 text-gray-300'}" style="${allDone?'background:#F5C300':''}">${icon('check','w-5 h-5')}</button>`;
@@ -738,7 +880,7 @@ function renderWorkoutDetail(){
   const progress=getProgress();
   const stickyHdr=(title,subtitle)=>`
     <div class="sticky top-0 z-40" style="background:linear-gradient(180deg,#1a2235 0%,#111827 100%);box-shadow:0 8px 32px rgba(0,0,0,0.55),0 2px 0 rgba(255,255,255,0.08) inset">
-      <div class="flex items-center px-4 gap-3" style="min-height:88px;padding-top:28px;padding-bottom:28px">
+      <div class="flex items-center px-5 gap-3" style="min-height:88px;padding-top:28px;padding-bottom:28px">
         <button data-action="go-home" class="w-10 h-10 flex items-center justify-center shrink-0 rounded-full" style="color:rgba(255,255,255,.7);background:rgba(255,255,255,.08)">${icon('arrow-left','w-5 h-5')}</button>
         <div class="flex-1 text-center">
           <h2 class="font-black text-white" style="font-size:18px;line-height:1.3">${title}</h2>
@@ -881,8 +1023,8 @@ function renderPlanner(){
   return `
     <div class="flex flex-col w-full min-h-screen pb-28" style="background:#FEFCE8">
       <div class="sticky top-0 z-40" style="background:#2D6A4F;box-shadow:0 8px 28px rgba(0,0,0,0.26),0 2px 0 rgba(255,255,255,0.08) inset">
-        <div class="px-4 flex items-center gap-3" style="padding-top:28px;padding-bottom:28px">
-          <img src="${window._appIcon||''}" style="width:50px;height:50px;flex-shrink:0" alt="logo">
+        <div class="px-5 flex items-center gap-3" style="padding-top:28px;padding-bottom:28px">
+          <img src="${window._appIcon||''}" style="width:54px;height:54px;flex-shrink:0" alt="logo">
           <h2 class="font-black" style="font-size:18px;font-weight:900;line-height:1.2;color:#ffffff;flex:1">Weekly Planner</h2>
           <button data-action="go-home" class="flex items-center gap-2 rounded-full px-4 py-2" style="color:#ffffff;background:rgba(255,255,255,0.2);border:none;cursor:pointer;white-space:nowrap">
             ${icon('arrow-left','w-4 h-4')}
@@ -962,8 +1104,8 @@ function renderProgress(){
   return `
     <div class="flex flex-col w-full min-h-screen pb-28" style="background:#FEFCE8">
       <div class="sticky top-0 z-40" style="background:#2D6A4F;box-shadow:0 8px 28px rgba(0,0,0,0.26),0 2px 0 rgba(255,255,255,0.08) inset">
-        <div class="px-4 flex items-center gap-3" style="padding-top:28px;padding-bottom:28px">
-          <img src="${window._appIcon||''}" style="width:50px;height:50px;flex-shrink:0" alt="logo">
+        <div class="px-5 flex items-center gap-3" style="padding-top:28px;padding-bottom:28px">
+          <img src="${window._appIcon||''}" style="width:54px;height:54px;flex-shrink:0" alt="logo">
           <h2 class="font-black" style="font-size:18px;font-weight:900;line-height:1.2;color:#ffffff;flex:1">Progress</h2>
           <button data-action="go-home" class="flex items-center gap-2 rounded-full px-4 py-2" style="color:#ffffff;background:rgba(255,255,255,0.2);border:none;cursor:pointer;white-space:nowrap">
             ${icon('arrow-left','w-4 h-4')}
@@ -1101,6 +1243,23 @@ document.getElementById('app').addEventListener('click',function(e){
   else if(action==='toggle-video'){
     const id=el.dataset.exerciseId;
     if(state.openVideos.has(id)){state.openVideos.delete(id);}else{state.openVideos.add(id);}
+    render();
+  } else if(action==='toggle-swaps'){
+    const id=el.dataset.exerciseId;
+    if(state.openSwaps.has(id)){state.openSwaps.delete(id);}else{state.openSwaps.add(id);}
+    render();
+  } else if(action==='select-swap'){
+    const id=el.dataset.exerciseId;
+    const idx=parseInt(el.dataset.swapIndex);
+    const workout=state.activeWorkout;
+    let swapData=null;
+    if(workout.blocks){workout.blocks.forEach(b=>b.exercises.forEach(e=>{if(e.id===id&&e.swaps)swapData=e.swaps[idx];}));}
+    if(swapData){state.activeSwaps[id]=swapData;}
+    state.openSwaps.delete(id);
+    render();
+  } else if(action==='clear-swap'){
+    const id=el.dataset.exerciseId;
+    delete state.activeSwaps[id];
     render();
   }
   else if(action==='adjust-weight'){
