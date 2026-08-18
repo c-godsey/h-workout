@@ -854,29 +854,7 @@ function renderExerciseCard(ex,showWeightTracker){
     ? `<div class="w-full" style="${isShort?'aspect-ratio:9/16;max-height:380px':'aspect-ratio:16/9'}"><iframe src="${embedUrl}?autoplay=1&rel=0&modestbranding=1" class="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="${displayEx.name}"></iframe></div>`
     : '';
 
-  // Swap panel
-  const swapPanel = (swapOpen && ex.swaps && ex.swaps.length)
-    ? `<div class="px-4 pb-4 border-t border-gray-100">
-        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9ca3af;padding-top:12px;padding-bottom:8px">Swap Options</p>
-        <div class="flex flex-col gap-2">
-          ${ex.swaps.map((s,i)=>{
-            const isActive = activeSwap && activeSwap.name===s.name;
-            return `<button data-action="select-swap" data-exercise-id="${ex.id}" data-swap-index="${i}"
-              class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all active:scale-98"
-              style="background:${isActive?'#2D6A4F':'#f9fafb'};border:2px solid ${isActive?'#2D6A4F':'#e5e7eb'}">
-              <div style="width:28px;height:28px;border-radius:8px;background:${isActive?'rgba(255,255,255,0.2)':'#F5C300'};flex-shrink:0;display:flex;align-items:center;justify-content:center">
-                ${isActive?icon('check','w-3.5 h-3.5 text-white'):icon('dumbbell','w-3.5 h-3.5 text-gray-900')}
-              </div>
-              <div class="flex-1 min-w-0">
-                <p style="font-size:13px;font-weight:700;color:${isActive?'#ffffff':'#111827'};line-height:1.2">${s.name}</p>
-                <p style="font-size:11px;color:${isActive?'rgba(255,255,255,0.7)':'#9ca3af'}">${s.reps}</p>
-              </div>
-              ${isActive?`<button data-action="clear-swap" data-exercise-id="${ex.id}" style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.15);border:none;border-radius:6px;padding:4px 8px;cursor:pointer">Reset</button>`:''}
-            </button>`;
-          }).join('')}
-        </div>
-      </div>`
-    : '';
+  const swapPanel = '';
 
   return `
     <div class="bg-white rounded-2xl overflow-hidden shadow-soft" id="card-${ex.id}">
@@ -886,9 +864,7 @@ function renderExerciseCard(ex,showWeightTracker){
           </h4>
           <p style="font-size:11px;color:#9ca3af;font-weight:600">${displayEx.reps}</p>
         </div>
-        ${ex.swaps&&ex.swaps.length?`<button data-action="toggle-swaps" data-exercise-id="${ex.id}" class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-colors" style="${swapOpen?'background:#2D6A4F;color:white':'background:#f3f4f6;color:#6b7280'}" title="Swap exercise">
-          ${icon('arrows-up-down','w-4 h-4')}
-        </button>`:''}
+        
         <button data-action="toggle-video" data-exercise-id="${ex.id}" class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors" style="${videoOpen?'background:#111827;color:white':'background:#F5C300;color:#111827'}">
           ${videoOpen?icon('x','w-4 h-4'):icon('play','w-4 h-4 fill-current ml-0.5')}
         </button>
