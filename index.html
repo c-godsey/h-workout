@@ -241,9 +241,10 @@ const workoutProgram = {
     {id:"Strength A",category_title:"Resistance",workout_name:"Full Body (Hinge + Squat)",meta:{total_blocks:3,avg_time:"35-45 Mins"},
      warm_up:[
        {id:"wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},
-       {id:"wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/shorts/qYBrq4A0LqI"},
-       {id:"wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/shorts/1LvxZrJFy9Y"},
-       {id:"wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}
+       {id:"wu2",name:"Quadruped Thread the Needle",reps:"45 sec",video:"https://www.youtube.com/shorts/6hxBYmC9J-0"},
+       {id:"wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"},
+       {id:"wu5",name:"Spider-Man Lunge with Rotation",reps:"45 sec",video:"https://www.youtube.com/shorts/vGY8H9FIsLU"},
+       {id:"wu6",name:"Standing Hip CARs",reps:"6/side",video:"https://www.youtube.com/shorts/NNiAArqM8Is"}
      ],
      blocks:[
        {block_name:"Block 1",exercises:[
@@ -279,14 +280,18 @@ const workoutProgram = {
            {name:"Dead Bug",reps:"8-10/side",video:"https://www.youtube.com/shorts/5c-vucY3beU",noWeightInput:true},
            {name:"High to Low Cable Twists",reps:"8-10/side",video:"https://www.youtube.com/watch?v=_mHR9ewsHZg"}
          ]}
+       ]},
+       {block_name:"Finisher",exercises:[
+         {id:"sa7",name:"D1. Cable Curls",reps:"3 × 12-15",video:"https://www.youtube.com/shorts/EaVssHFsAJ8",swaps:[]}
        ]}
      ]},
     {id:"Strength B",category_title:"Resistance",workout_name:"Unilateral + Push/Pull",meta:{total_blocks:3,avg_time:"30-40 Mins"},
      warm_up:[
        {id:"wb_wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},
-       {id:"wb_wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/shorts/qYBrq4A0LqI"},
-       {id:"wb_wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/shorts/1LvxZrJFy9Y"},
-       {id:"wb_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}
+       {id:"wb_wu2",name:"Quadruped Thread the Needle",reps:"45 sec",video:"https://www.youtube.com/shorts/6hxBYmC9J-0"},
+       {id:"wb_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"},
+       {id:"wb_wu5",name:"Spider-Man Lunge with Rotation",reps:"45 sec",video:"https://www.youtube.com/shorts/vGY8H9FIsLU"},
+       {id:"wb_wu6",name:"Standing Hip CARs",reps:"6/side",video:"https://www.youtube.com/shorts/NNiAArqM8Is"}
      ],
      blocks:[
        {block_name:"Block 1",exercises:[
@@ -320,14 +325,18 @@ const workoutProgram = {
            {name:"Hollow Hold",reps:"20-30 sec",video:"https://www.youtube.com/shorts/6dfkYZm9tpE",noWeightInput:true},
            {name:"Plank",reps:"30-45 sec",video:"https://www.youtube.com/shorts/5c-vucY3beU",noWeightInput:true}
          ]}
+       ]},
+       {block_name:"Finisher",exercises:[
+         {id:"sb7",name:"D1. Tricep Pulldowns",reps:"3 × 12-15",video:"https://www.youtube.com/shorts/UKsqwz1OSWw",swaps:[]}
        ]}
      ]},
     {id:"Strength C",category_title:"Resistance",workout_name:"Posterior Chain + Power",meta:{total_blocks:3,avg_time:"35-45 Mins"},
      warm_up:[
        {id:"wc_wu1",name:"90/90 Hip Rotations",reps:"6/side",video:"https://www.youtube.com/shorts/6dfkYZm9tpE"},
-       {id:"wc_wu2",name:"World's Greatest Stretch",reps:"3/side",video:"https://www.youtube.com/shorts/qYBrq4A0LqI"},
-       {id:"wc_wu3",name:"Banded Lateral Walks",reps:"15/side",video:"https://www.youtube.com/shorts/1LvxZrJFy9Y"},
-       {id:"wc_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"}
+       {id:"wc_wu2",name:"Quadruped Thread the Needle",reps:"45 sec",video:"https://www.youtube.com/shorts/6hxBYmC9J-0"},
+       {id:"wc_wu4",name:"Glute Bridge",reps:"15",video:"https://www.youtube.com/shorts/R1OXPHRqehw"},
+       {id:"wc_wu5",name:"Spider-Man Lunge with Rotation",reps:"45 sec",video:"https://www.youtube.com/shorts/vGY8H9FIsLU"},
+       {id:"wc_wu6",name:"Standing Hip CARs",reps:"6/side",video:"https://www.youtube.com/shorts/NNiAArqM8Is"}
      ],
      blocks:[
        {block_name:"Block 1",exercises:[
@@ -358,10 +367,10 @@ const workoutProgram = {
            {name:"Donkey Kick",reps:"15/side",video:"https://www.youtube.com/shorts/-FLW2TeREpM",noWeightInput:true},
            {name:"Banded Kickback",reps:"15-20/side",video:"https://www.youtube.com/shorts/GFi2L548acc",noWeightInput:true}
          ]},
-         {id:"sc6",name:"C2. Suitcase Carry",reps:"30-45 sec/side",video:"https://www.youtube.com/shorts/T5XLh0rXbxQ",swaps:[
-           {name:"Farmer Carry (Both)",reps:"30-45 sec",video:"https://www.youtube.com/shorts/1uOs1hP3u4A"},
-           {name:"Overhead Carry",reps:"20-30 sec/side",video:"https://www.youtube.com/shorts/YD-jU8HF9r0"}
-         ]}
+         {id:"sc6",name:"C2. Cable Twists (High or Low)",reps:"12-15/side",video:"https://www.youtube.com/watch?v=_mHR9ewsHZg",swaps:[]}
+       ]},
+       {block_name:"Finisher",exercises:[
+         {id:"sc7",name:"D1. Lateral Lunge",reps:"3 × 8-10",video:"https://www.youtube.com/shorts/MiT4XDp168I",swaps:[]}
        ]}
      ]}
   ],
@@ -541,8 +550,13 @@ function finishWorkout() {
   state.pendingWeightLogs={}; state.completedExercises=new Set();
 }
 function handleFinishWorkout() {
-  const end=Date.now()+3000;
-  (function frame(){confetti({particleCount:5,angle:60,spread:55,origin:{x:0},colors:['#F5C300','#00A79D','#FFFFFF']});confetti({particleCount:5,angle:120,spread:55,origin:{x:1},colors:['#F5C300','#00A79D','#FFFFFF']});if(Date.now()<end)requestAnimationFrame(frame);})();
+  try {
+    const end=Date.now()+3000;
+    (function frame(){
+      try{confetti({particleCount:5,angle:60,spread:55,origin:{x:0},colors:['#F5C300','#00A79D','#FFFFFF']});confetti({particleCount:5,angle:120,spread:55,origin:{x:1},colors:['#F5C300','#00A79D','#FFFFFF']});}catch(e){}
+      if(Date.now()<end)requestAnimationFrame(frame);
+    })();
+  } catch(e) {}
   finishWorkout(); state.completionRating=0; state.activeView='complete'; render(); window.scrollTo(0,0);
 }
 function handleReset() {
@@ -614,7 +628,6 @@ function renderBottomNav() {
   const v=state.activeView;
   const items=[
     {id:'workouts',ic:'dumbbell',   label:'Workouts',action:'go-home',   active:v==='home'||v==='detail'||v==='complete'},
-    {id:'planner', ic:'calendar',   label:'Planner', action:'open-planner', active:v==='planner'},
     {id:'progress',ic:'bar-chart-2',label:'Progress',action:'open-progress',active:v==='progress'},
   ];
   return `
@@ -690,85 +703,83 @@ function renderCalendarStrip() {
 // RENDER: HOME
 // ====================================================================
 function renderHome() {
-  const schedule=getCustomSchedule();
   const { cool_down }=workoutProgram;
-  const DOW_MAP={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0};
-  const todayDow=new Date().getDay();
 
-  const workoutCards=schedule.map(day=>{
-    if(day.isRest) return `
-      <div class="flex items-center bg-gray-100 rounded-2xl px-5 py-4 opacity-60 flex-shrink-0" style="min-width:185px">
-        <div class="flex-1"><span style="font-size:10px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:.1em">${day.day}</span>
-          <p class="font-bold text-gray-500 mt-0.5">${day.workoutName}</p><p style="font-size:11px;color:#9ca3af;margin-top:2px">Rest &amp; Recovery</p></div>
-        ${icon('moon','w-7 h-7 text-gray-300')}
-      </div>`;
-    const grad=CARD_GRADIENTS[day.workoutId]||'linear-gradient(135deg,#666,#444)';
-    const icn=day.type==='cardio'?icon('bike','w-8 h-8 text-white opacity-90'):icon('dumbbell','w-8 h-8 text-white opacity-90');
-    const completed=isWorkoutCompleted(day.workoutId);
+  // Determine "Next Up" from history
+  const STRENGTH_SEQ=['Strength A','Strength B','Strength C'];
+  const lastStrength=state.workoutHistory.find(h=>h.type==='resistance'||STRENGTH_SEQ.includes(h.workoutId));
+  let nextStrengthId='Strength A';
+  if(lastStrength){const i=STRENGTH_SEQ.indexOf(lastStrength.workoutId);nextStrengthId=STRENGTH_SEQ[(i+1)%3];}
+
+  const SEQUENCE=[
+    {workoutId:'Strength A',       type:'resistance',workoutName:'Strength A',       meta:'Full Body (Hinge + Squat) · 35-45 min'},
+    {workoutId:'Strength B',       type:'resistance',workoutName:'Strength B',       meta:'Unilateral + Push/Pull · 30-40 min'},
+    {workoutId:'Strength C',       type:'resistance',workoutName:'Strength C',       meta:'Posterior Chain + Power · 35-45 min'},
+    {workoutId:'Cardio_Intervals', type:'cardio',    workoutName:'Bike Intervals',    meta:'30 min intervals'},
+  ];
+
+  // Next Up banner
+  const nextItem=SEQUENCE.find(s=>s.workoutId===nextStrengthId)||SEQUENCE[0];
+  const nextGrad=CARD_GRADIENTS[nextItem.workoutId]||'linear-gradient(135deg,#666,#444)';
+  const nextDone=isWorkoutCompleted(nextItem.workoutId);
+  const nextUpBanner=`
+    <div class="mb-6">
+      <p style="font-size:11px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Next Up</p>
+      <div data-action="open-workout" data-workout-id="${nextItem.workoutId}" data-workout-type="${nextItem.type}"
+        class="workout-card cursor-pointer active:scale-[0.98] transition-transform" style="height:140px;background:${nextGrad}">
+        <div class="relative z-10 h-full flex items-end justify-between p-5">
+          <div>
+            <div class="flex items-center gap-2 mb-1">${icon('dumbbell','w-5 h-5 text-white opacity-90')}<span style="font-size:11px;font-weight:900;color:rgba(255,255,255,.8);text-transform:uppercase">Strength</span></div>
+            <h3 class="font-black text-white text-xl">${nextItem.workoutName}</h3>
+            <p style="font-size:11px;color:rgba(255,255,255,.8);margin-top:2px">${nextItem.meta}</p>
+          </div>
+          ${nextDone
+            ?`<div class="flex items-center gap-1.5 rounded-full px-3 py-1.5" style="background:rgba(255,255,255,.2)"><span style="font-size:11px;font-weight:700;color:white">Done</span>${icon('check-circle-2','w-4 h-4 text-white')}</div>`
+            :`<div class="bg-white rounded-full px-4 py-2"><span style="font-size:12px;font-weight:900;color:#111827">START</span></div>`}
+        </div>
+      </div>
+    </div>`;
+
+  const workoutCards=SEQUENCE.map(item=>{
+    const grad=CARD_GRADIENTS[item.workoutId]||'linear-gradient(135deg,#666,#444)';
+    const icn=item.type==='cardio'?icon('bike','w-8 h-8 text-white opacity-90'):icon('dumbbell','w-8 h-8 text-white opacity-90');
+    const completed=isWorkoutCompleted(item.workoutId);
+    const typeLabel=item.type==='cardio'?'Cardio':'Strength';
     return `
-      <div data-action="open-workout" data-workout-id="${day.workoutId}" data-workout-type="${day.type}"
+      <div data-action="open-workout" data-workout-id="${item.workoutId}" data-workout-type="${item.type}"
         class="workout-card flex-shrink-0 cursor-pointer active:scale-[0.97] transition-transform" style="min-width:180px;height:220px;background:${grad}">
         <div class="relative z-10 h-full flex flex-col justify-between p-5">
           <div class="flex justify-between items-start">${icn}
             ${completed?`<div class="w-7 h-7 rounded-full flex items-center justify-center" style="background:rgba(255,255,255,.2)">${icon('check','w-4 h-4 text-white')}</div>`:''}
           </div>
           <div>
-            <span style="font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.7)">${day.day} · ${day.type==='cardio'?'Cardio':'Strength'}</span>
-            <h3 class="font-black text-white text-lg leading-tight mt-1">${day.workoutName}</h3>
-            <p style="font-size:11px;color:rgba(255,255,255,.8);font-weight:500;margin-top:4px">${day.meta||''}</p>
+            <span style="font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.7)">${typeLabel}</span>
+            <h3 class="font-black text-white text-lg leading-tight mt-1">${item.workoutName}</h3>
+            <p style="font-size:11px;color:rgba(255,255,255,.8);font-weight:500;margin-top:4px">${item.meta}</p>
           </div>
         </div>
       </div>`;
   });
 
-  const todayDay=schedule.find(d=>DOW_MAP[d.day]===todayDow);
-  let todayBanner='';
-  if(todayDay&&!todayDay.isRest){
-    const grad=CARD_GRADIENTS[todayDay.workoutId]||'linear-gradient(135deg,#666,#444)';
-    const icn=todayDay.type==='cardio'?icon('bike','w-5 h-5'):icon('dumbbell','w-5 h-5');
-    const done=isWorkoutCompleted(todayDay.workoutId);
-    todayBanner=`
-      <div class="mb-6">
-        <p style="font-size:11px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Today's Workout</p>
-        <div data-action="open-workout" data-workout-id="${todayDay.workoutId}" data-workout-type="${todayDay.type}"
-          class="workout-card cursor-pointer active:scale-[0.98] transition-transform" style="height:140px;background:${grad}">
-          <div class="relative z-10 h-full flex items-end justify-between p-5">
-            <div><div class="flex items-center gap-2 mb-1">${icn}<span style="font-size:11px;font-weight:900;color:rgba(255,255,255,.8);text-transform:uppercase">${todayDay.type==='cardio'?'Cardio':'Strength'}</span></div>
-              <h3 class="font-black text-white text-xl">${todayDay.workoutName}</h3>
-              <p style="font-size:11px;color:rgba(255,255,255,.8);margin-top:2px">${todayDay.meta||''}</p></div>
-            ${done?`<div class="flex items-center gap-1.5 rounded-full px-3 py-1.5" style="background:rgba(255,255,255,.2)"><span style="font-size:11px;font-weight:700;color:white">Done</span>${icon('check-circle-2','w-4 h-4 text-white')}</div>`
-              :`<div class="bg-white rounded-full px-4 py-2"><span style="font-size:12px;font-weight:900;color:#111827">START</span></div>`}
-          </div>
-        </div>
-      </div>`;
-  }
-
   return `
     <div class="flex flex-col w-full min-h-screen pb-28" style="background:#FEFCE8">
       <div style="background:#2D6A4F;box-shadow:0 8px 32px rgba(0,0,0,0.28),0 2px 0 rgba(255,255,255,0.08) inset">
         <div class="px-5 flex items-center justify-between" style="padding-top:28px;padding-bottom:28px">
-          <\!-- PWA-style logo + title -->
           <button data-action="go-home" class="flex items-center gap-3" style="background:none;border:none;cursor:pointer;padding:0">
             <img src="${window._appIcon||''}" style="width:54px;height:54px;flex-shrink:0" alt="logo">
             <span style="font-size:18px;font-weight:900;color:#ffffff;letter-spacing:.01em">HEATHER'S WORKOUT</span>
           </button>
-          <\!-- Desktop nav tabs (hidden on mobile) -->
           <div class="desk-nav" style="display:none;gap:4px">
             ${[
-              {label:'Workouts',action:'go-home',   active:true},
-              {label:'Planner', action:'open-planner', active:false},
+              {label:'Workouts',action:'go-home',    active:true},
               {label:'Progress',action:'open-progress',active:false},
             ].map(it=>`<button data-action="${it.action}" style="padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;background:${it.active?'rgba(255,255,255,0.9)':'rgba(255,255,255,0.15)'};color:${it.active?'#2D6A4F':'rgba(255,255,255,0.85)'}">${it.label}</button>`).join('')}
           </div>
         </div>
-        <\!-- Calendar on white -->
-        <div style="background:#ffffff;padding-top:12px">
-          ${renderCalendarStrip()}
-        </div>
       </div>
       <div class="px-5 py-6">
-        ${todayBanner}
-        <p style="font-size:11px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">This Week</p>
+        ${nextUpBanner}
+        <p style="font-size:11px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">All Workouts</p>
         <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2 mb-6">${workoutCards.join('')}</div>
         <div class="space-y-3">
           <div data-action="open-workout" data-workout-id="CoolDown" data-workout-type="cooldown"
